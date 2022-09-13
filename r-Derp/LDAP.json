@@ -1,0 +1,5 @@
+{
+  "domain": "", //Domain name, for example: LinusTechTips
+  "domainType": "local", //Domain type: local/global
+  "computerNameFilter": "*PC-*" //Computer name filter, this can not be empty! Our domain uses PC-XXXXXX for computer names.
+}
