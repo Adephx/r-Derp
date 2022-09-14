@@ -112,7 +112,16 @@ namespace r_Derp
             using (DirectoryEntry entry = new("LDAP://" + domain))
             {
                 using DirectorySearcher mySearcher = new(entry);
-                mySearcher.Filter = ("(&(objectclass=computer)(cn=" + computerNameFilter + "))");
+                
+                if (computerNameFilter != string.Empty)
+                {
+                    mySearcher.Filter = ("(&(objectclass=computer)(cn=" + computerNameFilter + "))");
+                }
+
+                else
+                {
+                    mySearcher.Filter = ("(objectclass=computer)");
+                }
 
                 // No size limit, reads all objects
                 mySearcher.SizeLimit = 0;
